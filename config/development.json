@@ -1,0 +1,13 @@
+{
+  "env": "development",
+  "APP_ID": "upGrad",
+  "mobile": {
+    "host": "0.0.0.0"
+  },
+  "web": {
+   "host": "0.0.0.0",
+  	"upgrad": 8000
+  },
+  "api_url": "https://api.mlab.com/api/1/databases/upgrad/collections",
+  "api_key": "NfffJPK4idTah_JmhYQk_AQ6SOMdRi34"
+}

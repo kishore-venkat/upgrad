@@ -1,0 +1,48 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+.btn-default, .btn-submit, .btn-danger {
+  outline : 0 !important;
+  border-radius: 2px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  padding: 10px 12px;
+  &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+  }
+  &:focus{
+      box-shadow: none;
+  }
+}
+
+.btn-default {
+    border: 1px solid $brand-primary;
+    background-color: transparent;
+    color: $brand-primary;
+    &:hover {
+      background-color: $brand-primary;
+      color: white;
+    }
+}
+
+.btn-submit {
+    border: 1px solid $brand-primary;
+    color: #ffffff;
+    background-color: $brand-primary;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.btn-danger {
+    border: 1px solid #d74338;
+    color: #ffffff;
+    background-color: #d74338;
+    &:hover {
+        opacity: 0.8;
+    }
+}

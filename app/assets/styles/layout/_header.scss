@@ -1,0 +1,25 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+.header {
+    color: $header-color;
+    background: $header-background;
+    height: $header-height;
+    box-shadow: 0 0 4px 3px rgba(0,0,0,0.20);
+    display: flex;
+    align-items: center;
+    .logo-wrap {
+        margin-left: 20px;
+        .logo {
+            width: 125px;
+            height: 25px;
+        }
+    }
+    .logout-wrap {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: flex-end;
+        margin-right: 20px;
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "env": "staging",
+  "APP_ID": "upGrad",
+  "api_url": "https://api.mlab.com/api/1/databases/upgrad/collections",
+  "api_key": "NfffJPK4idTah_JmhYQk_AQ6SOMdRi34"
+}

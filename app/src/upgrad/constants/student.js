@@ -1,0 +1,3 @@
+export const STUDENT = 'STUDENT'
+export const STUDENT_SUCCESS = 'STUDENT_SUCCESS'
+export const STUDENT_FAILURE = 'STUDENT_FAILURE'
