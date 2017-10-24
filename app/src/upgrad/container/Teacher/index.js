@@ -3,7 +3,7 @@ import { withRouter, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { checkPage } from '../../utils'
 import { Table, Dropdown } from '../../components'
-import { teacherAction, teacherAssignAction, teacherAssignToAction } from '../../actions'
+import { teacherAction, teacherAssignAction, teacherAssignToAction, teacherAlreadyAction } from '../../actions'
 import { student } from '../../constants'
 
 class Teacher extends Component {
@@ -20,6 +20,7 @@ class Teacher extends Component {
     checkPage(this.props, 'teacher')
     if (this.props.login === 'teacher') {
       this.props.teacherAction(this.state.selected)
+      this.props.teacherAlreadyAction(this.state.selected)
     }
   }
   onDropdownSubmit (value) {
@@ -28,6 +29,7 @@ class Teacher extends Component {
     }, () => {
       this.props.teacherAssignToAction(this.state.selected)
       this.props.teacherAction(this.state.selected)
+      this.props.teacherAlreadyAction(this.state.selected)
     })
   }
   showQuestion (value) {
@@ -52,6 +54,8 @@ class Teacher extends Component {
           </div>
         </div>
         <Table showQuestion={this.showQuestion} teacher data={this.props.question} onAssign={this.onAssign} />
+        <h3>Already asiigned</h3>
+        <Table data={this.props.alreadyAssigned} />
       </div>
     )
   }
@@ -62,8 +66,9 @@ const mapStateToProps = (state) => {
     login: state.login,
     question: state.teacher,
     success: state.success,
-    assign: state.teacherAssignTo
+    assign: state.teacherAssignTo,
+    alreadyAssigned: state.teacherAlready
   }
 }
 
-export default withRouter(connect(mapStateToProps, {teacherAction, teacherAssignAction, teacherAssignToAction})(Teacher))
+export default withRouter(connect(mapStateToProps, {teacherAction, teacherAssignAction, teacherAssignToAction, teacherAlreadyAction})(Teacher))

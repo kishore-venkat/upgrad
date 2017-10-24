@@ -6,6 +6,9 @@ import {
   TEACHER_ASSIGN_FAILURE,
   TEACHER_ASSIGN_SUCCESS,
   TEACHER_ASSIGN_TO,
+  TEACHER_ALREADY,
+  TEACHER_ALREADY_FAILURE,
+  TEACHER_ALREADY_SUCCESS,
   student
 } from '../constants'
 
@@ -75,6 +78,34 @@ export function teacherAssignToReducer (state = student[0], action) {
   switch (action.type) {
     case TEACHER_ASSIGN_TO:
       return action.payload
+    default:
+      return state
+  }
+}
+
+export function teacherAlreadyReducer (state = INITIAL_STATE, action) {
+  switch (action.type) {
+    case TEACHER_ALREADY:
+      return {
+        ...state,
+        loading: true,
+        data: [],
+        error: false
+      }
+    case TEACHER_ALREADY_SUCCESS:
+      return {
+        ...state,
+        data: action.payload.response,
+        error: false,
+        loading: false
+      }
+    case TEACHER_ALREADY_FAILURE:
+      return {
+        ...state,
+        error: true,
+        data: [],
+        loading: false
+      }
     default:
       return state
   }

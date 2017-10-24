@@ -1,4 +1,4 @@
-import { TEACHER, TEACHER_ASSIGN, TEACHER_ASSIGN_TO } from '../constants'
+import { TEACHER, TEACHER_ASSIGN, TEACHER_ASSIGN_TO, TEACHER_ALREADY } from '../constants'
 
 export function teacherAction (value) {
   return {
@@ -18,5 +18,12 @@ export function teacherAssignToAction (value) {
   return {
     type: TEACHER_ASSIGN_TO,
     payload: value
+  }
+}
+
+export function teacherAlreadyAction (value) {
+  return {
+    type: TEACHER_ALREADY,
+    payload: `{"assigned":{ "$eq": "${value}" }}`
   }
 }

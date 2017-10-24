@@ -5,13 +5,14 @@ import {
   authorQuestionUpdateEpic,
   authorDeleteQuestionEpic
 } from './question'
-import { teacherEpic, teacherAssignEpic } from './teacher'
+import { teacherEpic, teacherAssignEpic, teacherAlreadyEpic } from './teacher'
 import { studentEpic } from './student'
 
 export const rootEpic = combineEpics(
   authorQuestionEpic,
   teacherEpic,
   teacherAssignEpic,
+  teacherAlreadyEpic,
   studentEpic,
   authorGetQuestionDataEpic,
   authorQuestionUpdateEpic,
